@@ -1,5 +1,5 @@
 #include "ComplexFigure.h"
-
+//some
 ComplexFigure::ComplexFigure(int _X, int _Y, int _R)
 {
 	X = _X;

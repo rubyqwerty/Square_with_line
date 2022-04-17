@@ -24,3 +24,8 @@ Figure::~Figure()
 {
     ReleaseDC(hwnd, hdc);
 }
+
+void Figure::move(int _X, int _Y)
+{
+    
+}

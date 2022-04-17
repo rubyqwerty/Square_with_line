@@ -15,6 +15,12 @@ void ComplexFigure::draw()
 	line->draw();
 }
 
+void ComplexFigure::hide()
+{
+	square->hide();
+	line->hide();
+}
+
 ComplexFigure::~ComplexFigure()
 {
 	delete line;

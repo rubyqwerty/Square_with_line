@@ -1,3 +1,4 @@
+//убрать из конструкторов пересчет координат. Переместить их в функцию draw()
 #pragma once
 
 #include <iostream>
@@ -11,6 +12,8 @@ class Figure {
 
 	public:
 		virtual void draw() = 0;
+		virtual void hide() = 0;
+		virtual void move(int, int);
 		Figure();
 		~Figure();
 
@@ -20,5 +23,8 @@ class Figure {
 		RECT rt;
 		HPEN    pen;
 		HBRUSH  brush;
+		int X;
+		int Y;
+		int R;
 };
 

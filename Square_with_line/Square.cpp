@@ -2,11 +2,15 @@
 
 Square::Square(int _X, int _Y, int _R , COLORREF _ColorSquare)
 {
+	X = _X;
+	Y = _Y;
 	R = _R * 2;
-	X1 = _X - R / 2;
-	Y1 = _Y - R / 2;
+
+	X1 = X - R / 2;
+	Y1 = Y - R / 2;
 	X2 = X1 + R;
 	Y2 = Y1 + R;
+
 	ColorSquare = _ColorSquare;
 };
 
@@ -22,4 +26,10 @@ void Square::draw()
 
 	DeleteObject(pen);
 	DeleteObject(brush);
+}
+
+void Square::hide()
+{
+	RECT rct = {X1 - 1 , Y1 - 1, X2 + 1, Y2 + 1};
+	InvalidateRect(hwnd, &rct, 1);
 }

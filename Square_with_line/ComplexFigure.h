@@ -8,10 +8,6 @@
 class ComplexFigure : public Figure {
 
 private:
-
-	int X;
-	int Y;
-	int R;
 	Line* line;
 	Square* square;
 
@@ -20,5 +16,5 @@ public:
 	ComplexFigure(int _X, int _Y, int _R);
 	~ComplexFigure();
 	void draw() override;
-
+	void hide() override;
 };

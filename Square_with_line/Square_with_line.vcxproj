@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ComplexFigure.cpp" />
+    <ClCompile Include="Figure.cpp" />
     <ClCompile Include="Line.cpp" />
     <ClCompile Include="Square.cpp" />
     <ClCompile Include="Square_with_line.cpp" />

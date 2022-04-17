@@ -11,10 +11,11 @@ private:
 	int X2;
 	int Y2;
 	int R;
+	COLORREF ColorLine;
 
 public:
 
-	Line(int, int, int);
+	Line(int, int, int, COLORREF = RGB(0,0,0));
 
 	void draw() override;
 

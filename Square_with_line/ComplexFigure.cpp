@@ -11,11 +11,8 @@ ComplexFigure::ComplexFigure(int _X, int _Y, int _R)
 
 void ComplexFigure::draw() 
 {
-	cout << "draw Complex Figure: \n";
-	cout << "--------------------------------\n";
-	line->draw();
 	square->draw();
-	cout << "---------------------------------\n";
+	line->draw();
 }
 
 ComplexFigure::~ComplexFigure()

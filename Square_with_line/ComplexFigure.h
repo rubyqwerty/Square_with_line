@@ -18,9 +18,7 @@ private:
 public:
 
 	ComplexFigure(int _X, int _Y, int _R);
-
 	~ComplexFigure();
-
 	void draw() override;
 
 };

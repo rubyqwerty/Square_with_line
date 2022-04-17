@@ -11,10 +11,11 @@ private:
 	int X2;
 	int Y2;
 	int R;
+	COLORREF ColorSquare;
 
 public:
 
-	Square(int _X, int _Y, int _R);
+	Square(int, int, int, COLORREF = RGB(131, 163, 255));
 
 	void draw() override;
 

@@ -4,16 +4,14 @@
 
 int main()
 {
-	Figure* line = new Line(10, 10, 5);
-	line->draw();
-	cout << endl;
 
-	Figure* square = new Square(20, 30, 4);
+	Figure* square = new Square(300, 200, 50);
 	square->draw();
-	cout << endl;
 
-	Figure* complexfigure = new ComplexFigure(7, 7, 12);
+	Figure* line = new Line(200, 200, 50);
+	line->draw();
+
+	Figure* complexfigure = new ComplexFigure(100, 200, 50);
 	complexfigure->draw();
-
 }
 

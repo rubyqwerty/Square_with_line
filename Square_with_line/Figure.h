@@ -1,14 +1,24 @@
 #pragma once
 
 #include <iostream>
+#include <Windows.h>
+#include <windowsx.h>
 
+const int NotUsed = system("color F0");
 using namespace std;
 
 class Figure {
 
-public:
+	public:
+		virtual void draw() = 0;
+		Figure();
+		~Figure();
 
-	virtual void draw() = 0;
-
+	protected:
+		HWND hwnd;
+		HDC hdc;
+		RECT rt;
+		HPEN    pen;
+		HBRUSH  brush;
 };
 

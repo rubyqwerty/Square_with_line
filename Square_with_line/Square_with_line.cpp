@@ -1,11 +1,10 @@
 ﻿#include "ComplexFigure.h"
 #include <vector>
-
+#include <conio.h>
 
 int main()
 {
-
-	Figure* square = new Square(300, 200, 50);
+	Figure* square = new Square(500, 400, 50);
 	square->draw();
 
 
@@ -15,12 +14,9 @@ int main()
 	Figure* complexfigure = new ComplexFigure(100, 200, 50);
 	complexfigure->draw();
 
-	system("pause");
+	_getch();
 
 	complexfigure->hide();
-
-	
-
-	
+	return 0;
 }
 

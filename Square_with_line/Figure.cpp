@@ -4,19 +4,19 @@ Figure::Figure()
 {
     hwnd = 0;
 
-    if ((hwnd = GetConsoleWindow()) == 0) // получаем идентификатор окна
+    if ((hwnd = GetConsoleWindow()) == 0) 
     {
         cout << "Window not found!!!" << endl;
         return;
     }
 
-    if ((hdc = GetDC(hwnd)) == 0)       // получаем контекст отображения
+    if ((hdc = GetDC(hwnd)) == 0)      
     {
         cout << "Error!!!" << endl;
         return;
     }
 
-    GetClientRect(hwnd, &rt);   // получаем размер окна
+    GetClientRect(hwnd, &rt);   
 
 }
 
@@ -27,5 +27,9 @@ Figure::~Figure()
 
 void Figure::move(int _X, int _Y)
 {
-    
+    hide();
+    Sleep(1);
+    X = _X;
+    Y = _Y;
+    draw();
 }

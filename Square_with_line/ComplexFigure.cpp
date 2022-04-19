@@ -17,12 +17,18 @@ void ComplexFigure::draw()
 
 void ComplexFigure::hide()
 {
-	square->hide();
 	line->hide();
+	square->hide();
 }
 
 ComplexFigure::~ComplexFigure()
 {
 	delete line;
 	delete square;
+}
+
+void ComplexFigure::move(int _X, int _Y)
+{
+	square->move(_X, _Y);
+	line->move(_X, _Y);
 }

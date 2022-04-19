@@ -3,8 +3,11 @@
 #include <iostream>
 #include <Windows.h>
 #include <windowsx.h>
+#include <vector>
+#include <conio.h>
 
 const int NotUsed = system("color F0");
+
 using namespace std;
 
 class Figure {

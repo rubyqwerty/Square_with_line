@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ComplexFigure.cpp" />
+    <ClCompile Include="DynArr.cpp" />
     <ClCompile Include="Figure.cpp" />
     <ClCompile Include="Line.cpp" />
     <ClCompile Include="Square.cpp" />
@@ -147,6 +148,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ComplexFigure.h" />
+    <ClInclude Include="DynArr.h" />
     <ClInclude Include="Figure.h" />
     <ClInclude Include="Line.h" />
     <ClInclude Include="Square.h" />

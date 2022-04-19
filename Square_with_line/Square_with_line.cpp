@@ -1,26 +1,33 @@
 ﻿#include "ComplexFigure.h"
-#include <vector>
-#include <conio.h>
+#include "DynArr.h"
 
 int main()
 {
 	SetConsoleTitle((LPCWSTR)L"21VP2_7_Figures");
 
+	DynArr arr;
+
 	Figure* square = new Square(300, 200, 50);
-	square->draw();
+	//square->draw();
 	
 
 	Figure* line = new Line(500, 200, 50);
-	line->draw();
+	//line->draw();
 	
 	Figure* complexfigure = new ComplexFigure(100, 200, 50);
-	complexfigure->draw();
+	//complexfigure->draw();
 
+	arr.push(square);
+	arr.push(line);
+	arr.push(complexfigure);
+	arr.push(new Line(510, 200, 100));
+	arr.push(new Square(300, 50, 15));
+	arr.push(new ComplexFigure(200, 50, 10));
+
+	arr.print();
 	_getch();
+	arr.deleteArray();
 
-	square->move(250,200);
-	complexfigure->move(100, 100);
-	line->move(400, 200);
 	_getch();
 
 	return 0;

@@ -19,6 +19,13 @@ public:
 	Figure();
 	~Figure();
 
+	class Border {
+	public:
+		string name_figure;
+		string exit_point;
+		Border(string _name_figure, string _exit_point) : name_figure(_name_figure), exit_point(_exit_point) {};
+	};
+
 protected:
 	HWND hwnd;
 	HDC hdc;

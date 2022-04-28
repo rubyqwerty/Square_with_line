@@ -8,14 +8,21 @@ int main()
 	DynArr arr;
 
 	Figure* square = new Square(300, 200, 50);
-	//square->draw();
 	
-
-	Figure* line = new Line(500, 200, 50);
-	//line->draw();
+	Figure* line = new Line(600, 200, 50);
 	
 	Figure* complexfigure = new ComplexFigure(100, 200, 50);
-	//complexfigure->draw();
+	
+	try 
+	{
+		complexfigure->draw();
+		square->draw();
+		line->draw();
+	}
+	catch (Figure::Border border)
+	{
+		cout << "Breaking window borders: " << border.name_figure << border.exit_point;
+	}
 
 	arr.push(square);
 	arr.push(line);
@@ -27,8 +34,6 @@ int main()
 	arr.print();
 	_getch();
 	arr.deleteArray();
-
-	_getch();
 
 	return 0;
 }

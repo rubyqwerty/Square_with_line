@@ -11,6 +11,18 @@ ComplexFigure::ComplexFigure(int _X, int _Y, int _R)
 
 void ComplexFigure::draw() 
 {
+	if (X - R <= rt.left)
+		throw Border("ComplexFigure ", "exit on the left");
+
+	if (X + R >= rt.right)
+		throw Border("ComplexFigure ", "exit on the right");
+
+	if (Y - R <= rt.top)
+		throw Border("ComplexFigure ", "exit from the top");
+
+	if (Y + R >= rt.bottom)
+		throw Border("ComplexFigure ", "exit from the bottom");
+
 	square->draw();
 	line->draw();
 }

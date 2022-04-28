@@ -10,6 +10,18 @@ Square::Square(int _X, int _Y, int _R , COLORREF _ColorSquare)
 
 void Square::draw()
 {
+	if (X - R <= rt.left)
+		throw Border("Square " , "exit on the left");
+
+	if (X + R >= rt.right)
+		throw Border("Square ", "exit on the right");
+
+	if (Y - R <= rt.top)
+		throw Border("Square ", "exit from the top");
+
+	if (Y + R >= rt.bottom)
+		throw Border("Square ", "exit from the bottom");
+	
 
 	pen = CreatePen(PS_SOLID, 2, RGB(255, 162, 0));
 	brush = CreateSolidBrush(ColorSquare);

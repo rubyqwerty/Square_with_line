@@ -1,20 +1,45 @@
 #include "Line.h"
 
-
-Line::Line(int _X, int _Y, int _R)
+Line::Line(int _X, int _Y, int _R , COLORREF _ColorLine)
 {
-	X1 = _X;
-	Y1 = _Y;
+	X = _X;
+	Y = _Y;
 	R = _R;
-	X2 = X1;
-	Y2 = Y1 - R;
+	ColorLine = _ColorLine;
 }
 
 void Line::draw()
 {
-	cout << "draw Line: \n";
-	cout << "-------------------\n";
-	cout << "First point: (" << X1 << "," << Y1 << ")\n";
-	cout << "Second point: (" << X2 << "," << Y2 << ")\n";
-	cout << "-------------------\n";
+	if (X <= rt.left)
+		throw Border("Line ", "exit on the left");
+
+	if (X >= rt.right)
+		throw Border("Line ", "exit on the right");
+
+	if (Y - R <= rt.top)
+		throw Border("Line ", "exit from the top");
+
+	if (Y  >= rt.bottom)
+		throw Border("Line ", "exit from the bottom");
+
+	pen = CreatePen(PS_SOLID, 2, ColorLine);
+	
+	SelectObject(hdc, pen);
+
+	POINT points[] = { {X, Y} , {X , Y - R} };
+
+	Polygon(hdc, points, 2);
+
+	DeleteObject(pen);
+}
+
+void Line::hide()
+{
+    RECT rct = { X - 1 , Y + 1, X + 1, Y - R };
+	InvalidateRect(hwnd, &rct, 1);
+}
+
+void Line::move(int _X, int _Y)
+{
+	Figure::move(_X, _Y);
 }

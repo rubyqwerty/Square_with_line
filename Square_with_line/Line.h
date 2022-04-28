@@ -5,17 +5,11 @@
 class Line : public Figure {
 
 private:
-
-	int X1;
-	int Y1;
-	int X2;
-	int Y2;
-	int R;
+	COLORREF ColorLine;
 
 public:
-
-	Line(int, int, int);
-
+	Line(int, int, int, COLORREF = RGB(255, 162, 0));
 	void draw() override;
-
+	void hide() override;
+	void move(int, int) override;
 };

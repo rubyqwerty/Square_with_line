@@ -5,17 +5,11 @@
 class Square : public Figure {
 
 private:
-
-	int X1;
-	int Y1;
-	int X2;
-	int Y2;
-	int R;
+	COLORREF ColorSquare;
 
 public:
-
-	Square(int _X, int _Y, int _R);
-
+	Square(int, int, int, COLORREF = RGB(218, 255, 255));
 	void draw() override;
-
+	void hide() override;
+	void move(int, int) override; 
 };

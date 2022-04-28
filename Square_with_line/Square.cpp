@@ -1,19 +1,47 @@
 #include "Square.h"
 
-Square::Square(int _X, int _Y, int _R)
+Square::Square(int _X, int _Y, int _R , COLORREF _ColorSquare)
 {
-	R = _R * 2;
-	X1 = _X - R / 2;
-	Y1 = _Y - R / 2;
-	X2 = X1 + R;
-	Y2 = Y1 + R;
+	X = _X;
+	Y = _Y;
+	R = _R;
+	ColorSquare = _ColorSquare;
 };
 
 void Square::draw()
 {
-	cout << "draw Squar: \n";
-	cout << "-------------------\n";
-	cout << "First point: (" << X1 << "," << Y1 << ")\n";
-	cout << "Second point: (" << X2 << "," << Y2 << ")\n";
-	cout << "-------------------\n";
+	if (X - R <= rt.left)
+		throw Border("Square " , "exit on the left");
+
+	if (X + R >= rt.right)
+		throw Border("Square ", "exit on the right");
+
+	if (Y - R <= rt.top)
+		throw Border("Square ", "exit from the top");
+
+	if (Y + R >= rt.bottom)
+		throw Border("Square ", "exit from the bottom");
+	
+
+	pen = CreatePen(PS_SOLID, 2, RGB(255, 162, 0));
+	brush = CreateSolidBrush(ColorSquare);
+
+	SelectObject(hdc, pen);
+	SelectObject(hdc, brush);
+
+	Rectangle(hdc, X - R, Y - R, X + R, Y + R);
+
+	DeleteObject(pen);
+	DeleteObject(brush);
+}
+
+void Square::hide()
+{
+	RECT rct = {X - R - 1 , Y - R - 1, X + R + 1, Y + R + 1};
+	InvalidateRect(hwnd, &rct, 1);
+}
+
+void Square::move(int _X, int _Y)
+{
+	Figure::move(_X, _Y);
 }

@@ -4,11 +4,8 @@
 
 class Line : public Figure {
 
-private:
-	COLORREF ColorLine;
-
 public:
-	Line(int, int, int, COLORREF = RGB(255, 162, 0));
+	Line(int, int, int);
 	void draw() override;
 	void hide() override;
 	void move(int, int) override;

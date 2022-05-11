@@ -1,11 +1,10 @@
 #include "Line.h"
 
-Line::Line(int _X, int _Y, int _R , COLORREF _ColorLine)
+Line::Line(int _X, int _Y, int _R)
 {
 	X = _X;
 	Y = _Y;
 	R = _R;
-	ColorLine = _ColorLine;
 }
 
 void Line::draw()
@@ -22,7 +21,7 @@ void Line::draw()
 	if (Y  >= rt.bottom)
 		throw Border("Line ", "exit from the bottom");
 
-	pen = CreatePen(PS_SOLID, 2, ColorLine);
+	pen = CreatePen(PS_SOLID, 2, RGB(255, 162, 0));
 	
 	SelectObject(hdc, pen);
 

@@ -1,11 +1,10 @@
 #include "Square.h"
 
-Square::Square(int _X, int _Y, int _R , COLORREF _ColorSquare)
+Square::Square(int _X, int _Y, int _R)
 {
 	X = _X;
 	Y = _Y;
 	R = _R;
-	ColorSquare = _ColorSquare;
 };
 
 void Square::draw()
@@ -24,7 +23,7 @@ void Square::draw()
 	
 
 	pen = CreatePen(PS_SOLID, 2, RGB(255, 162, 0));
-	brush = CreateSolidBrush(ColorSquare);
+	brush = CreateSolidBrush(RGB(218, 255, 255));
 
 	SelectObject(hdc, pen);
 	SelectObject(hdc, brush);

@@ -5,8 +5,8 @@
 class Line : public Figure {
 
 public:
-	Line(int, int, int);
+	Line(int _X, int _Y, int _R);
 	void draw() override;
 	void hide() override;
-	void move(int, int) override;
+	void move(int _X, int _Y) override;
 };

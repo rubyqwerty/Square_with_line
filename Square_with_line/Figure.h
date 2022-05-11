@@ -15,7 +15,7 @@ class Figure {
 public:
 	virtual void draw() = 0;
 	virtual void hide() = 0;
-	virtual void move(int, int);
+	virtual void move(int _X, int _Y);
 	Figure();
 	~Figure();
 

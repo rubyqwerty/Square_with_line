@@ -8,7 +8,7 @@ private:
 	vector <Figure*> array;
 
 public:
-	void push(Figure*);
+	void push(Figure* figure);
 	void print();
 	void deleteArray();
 	~DynArr();

@@ -28,6 +28,7 @@ Figure::~Figure()
 void Figure::move(int _X, int _Y)
 {
     hide();
+    Sleep(1);
     X = _X;
     Y = _Y;
     draw();

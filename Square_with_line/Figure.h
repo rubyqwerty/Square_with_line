@@ -6,15 +6,15 @@
 #include <vector>
 #include <conio.h>
 
-const int NotUsed = system("color F0");
+const int NotUsed = system("color F1");
 
 using namespace std;
 
 class Figure {
 
 public:
-	virtual void draw() = 0;
-	virtual void hide() = 0;
+	virtual void draw();
+	virtual void hide();
 	virtual void move(int _X, int _Y);
 	Figure();
 	~Figure();

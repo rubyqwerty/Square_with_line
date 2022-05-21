@@ -34,7 +34,10 @@ void Line::draw()
 
 void Line::hide()
 {
-    RECT rct = { X - 1 , Y + 1, X + 1, Y - R };
-	InvalidateRect(hwnd, &rct, 1);
+	pen = CreatePen(PS_SOLID, 2, RGB(255, 255, 255));
+	SelectObject(hdc, pen);
+	POINT points[] = { {X, Y} , {X , Y - R} };
+	Polygon(hdc, points, 2);
+	DeleteObject(pen);
 }
 
